@@ -1,12 +1,17 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const PostsList = ({ posts }) => {
-  return (
-    <>
-      {posts.map((post) => {
-        return <h3 key={post.id}>{post.lable}</h3>;
-      })}
-    </>
-  );
+    return (
+        <>
+            {posts.map(post => {
+                return (
+                    <Link key={post.id} to={`posts/${post.id}`}>
+                        <h3>{post.lable}</h3>
+                    </Link>
+                );
+            })}
+        </>
+    );
 };
 export default PostsList;
